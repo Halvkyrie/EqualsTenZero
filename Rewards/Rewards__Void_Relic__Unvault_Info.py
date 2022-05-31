@@ -44,6 +44,6 @@ for i in VoidRelicList:
     tier = relic.getTier()
     quality = relic.getQuality()
     id = relic.getID()
+    fullName = f"{tier} {id} Relic"
 
-    print(f"[{tier} {id} Relic] \nRefinement: {quality}")
-    # print(f"{tier} {id} - \({quality}\)")
+    print(fullName)
