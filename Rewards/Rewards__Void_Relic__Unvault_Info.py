@@ -1,13 +1,13 @@
 import json
+from xml.etree.ElementTree import tostring
 
 
 class VoidRelic:
 
     itemType = 'Void Relic'
 
-    def __init__(self, id) -> None:
-
-        self.id = id        
+    def __init__(self) -> None:
+        return        
         
     def setTier(self, tier):
         self.tier = tier
@@ -17,7 +17,11 @@ class VoidRelic:
         self.quality = quality
     def getQuality(self):
         return self.quality
-        
+    def setID(self, ID):
+        self.id = ID
+    def getID(self):
+        return self.id
+
 
 VoidRelicList = [
     {
@@ -33,7 +37,13 @@ VoidRelicList = [
 ]
 
 for i in VoidRelicList:
-    i = VoidRelic(i["id"])
-    i.setTier(i["tier"])
-    i.setQuality(i["quality"])
-    print(i["id"])
+    relic = VoidRelic()
+    relic.setTier(i["tier"])
+    relic.setQuality(i["quality"])
+    relic.setID(i["id"])
+    tier = relic.getTier()
+    quality = relic.getQuality()
+    id = relic.getID()
+
+    print(f"[{tier} {id} Relic] \nRefinement: {quality}")
+    # print(f"{tier} {id} - \({quality}\)")
