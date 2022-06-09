@@ -1,14 +1,17 @@
 import json
-from xml.etree.ElementTree import tostring
+import yaml
 
 
+# Class for the Void Relic and its values
 class VoidRelic:
 
     itemType = 'Void Relic'
 
+    # init - Requiring no other input
     def __init__(self) -> None:
         return        
-        
+    
+    # definitions to read/write information
     def setTier(self, tier):
         self.tier = tier
     def getTier(self):
@@ -21,6 +24,28 @@ class VoidRelic:
         self.id = ID
     def getID(self):
         return self.id
+    
+    # Class for Rewards
+    class Reward:
+
+        def __init__(self) -> None:
+            return
+        
+        def setT3(self, T3):
+            self.T3 = T3
+        def getT3(self):
+            return self.T3
+        def setT2(self, T2):
+            self.T2 = T2
+        def getT2(self):
+            return self.T2
+        def setT1(self, T1):
+            self.T1 = T1
+        def getT1(self):
+            return self.T1
+        
+
+
 
 
 VoidRelicList = [
@@ -46,4 +71,5 @@ for i in VoidRelicList:
     id = relic.getID()
     fullName = f"{tier} {id} Relic"
 
-    print(fullName)
+YamlRelicList = ("""
+""")
